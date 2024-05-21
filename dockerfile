@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image
-FROM node:18
+FROM node:18-buster
 
 # Set the working directory
 WORKDIR /src
@@ -15,6 +15,7 @@ COPY . .
 
 # Expose the port the app runs on
 EXPOSE 3000
-
+ENV PORT 3000
+COPY .env .
 # Define the command to run the application
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "start" ] 
